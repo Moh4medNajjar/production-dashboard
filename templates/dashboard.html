@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card kpi-card">
+            <div class="card-body">
+                <h5 class="card-title text-muted">Total Produit</h5>
+                <h2 class="text-primary">{{ stats.total }} kg</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card kpi-card">
+            <div class="card-body">
+                <h5 class="card-title text-muted">Moyenne/Plateau</h5>
+                <h2 class="text-success">{{ stats.moyenne }} kg</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card kpi-card">
+            <div class="card-body">
+                <h5 class="card-title text-muted">Top Opératrice</h5>
+                <h2>{{ stats.top_op }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card kpi-card">
+            <div class="card-body">
+                <h5 class="card-title text-muted">Enregistrements</h5>
+                <h2>{{ stats.count }}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card graph-container p-3">
+            {{ graph1|safe }}
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card graph-container p-3">
+            {{ graph2|safe }}
+        </div>
+    </div>
+</div>
+{% endblock %}
